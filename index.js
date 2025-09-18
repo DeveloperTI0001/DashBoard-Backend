@@ -10,7 +10,7 @@ const DiscordStrategy = require('./src/strategies/discordStrategy');
 const cors = require("cors");
 
 app.use(cors({
-  origin: "https://tommy-shelby.vercel.app", // o la URL de tu frontend en producción
+  origin: "https://tommy-shelby.vercel.app", // Reemplaza con el dominio de tu frontend
   credentials: true
 }));
 
