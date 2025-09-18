@@ -7,6 +7,12 @@ const passport = require('passport');
 const settings = require('./settings');
 const authRoutes = require('./auth');
 const DiscordStrategy = require('./src/strategies/discordStrategy');
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://tommy-shelby.vercel.app", // o la URL de tu frontend en producción
+  credentials: true
+}));
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
