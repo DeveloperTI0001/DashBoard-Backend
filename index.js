@@ -19,7 +19,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/auth', authRoutes);
-app.use('/settings', settings);
+app.use('/', settings);
 
 app.get('/', (req, res) => {
   res.json({ mensaje: "¡Holaaaaa!" });
