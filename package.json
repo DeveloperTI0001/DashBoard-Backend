@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/DeveloperTI0001/DashBoard-Backend/issues"
   },
-  "homepage": "https://github.com/DeveloperTI0001/DashBoard-Backend#readme"
+  "homepage": "https://github.com/DeveloperTI0001/DashBoard-Backend#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
