@@ -5,7 +5,7 @@ router.get('/', passport.authenticate('discord'));
 router.get('/redirect', passport.authenticate('discord', { 
     failureRedirect: '/forbidden' 
 }), (req, res) => {
-  res.redirect('/settings');
+  res.redirect("https://tommy-shelby.vercel.app/"); 
 });
 
 module.exports = router;
