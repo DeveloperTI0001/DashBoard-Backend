@@ -20,7 +20,7 @@ app.use(passport.session());
 app.use('/auth', authRoutes);
 
 app.get('/', (req, res) => {
-  res.sendStatus(403); // Envía solo el código de estado 403 Forbidden
+  res.send('Holaaaaa') // Envía solo el código de estado 403 Forbidden
 });
 
 app.listen(PORT, () => {
