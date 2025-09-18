@@ -4,6 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 5176;
 const session = require('express-session');
 const passport = require('passport');
+const settings = require('./settings');
 const authRoutes = require('./auth');
 const DiscordStrategy = require('./src/strategies/discordStrategy');
 
@@ -18,14 +19,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/auth', authRoutes);
+app.use('/settings', settings);
 
 app.get('/', (req, res) => {
   res.json({ mensaje: "¡Holaaaaa!" });
-});
-
-app.get('/settings', (req, res) => {
-  if (!req.user) return res.redirect('/auth');
-  res.json({ mensaje: "Hola desde Settings!", usuario: req.user });
 });
 
 app.listen(PORT, () => {

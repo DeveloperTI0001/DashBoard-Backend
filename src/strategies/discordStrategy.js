@@ -12,15 +12,6 @@ passport.use(new DiscordStrategy(
     try {
       // Aquí puedes guardar info en tu base de datos o loguear
       console.log("Usuario autenticado:", profile.username);
-
-      // EJEMPLO: recorrer los servidores
-      for (let g of profile.guilds) {
-        if (g.owner) {
-          console.log(`Eres dueño de: ${g.name}`);
-        }
-      }
-
-      // Esto es clave: devolver el perfil a Passport
       return done(null, profile);
     } catch (err) {
       return done(err, null);
@@ -32,7 +23,7 @@ passport.use(new DiscordStrategy(
 passport.serializeUser((user, done) => {
   done(null, user);
 });
-
+// Deserialización (para recuperar el usuario de la sesión)
 passport.deserializeUser((obj, done) => {
   done(null, obj);
 });
