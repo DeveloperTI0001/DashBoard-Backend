@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const passport = require('passport');
-const settings = require('./settings');
 
 router.get('/', passport.authenticate('discord'));
 
