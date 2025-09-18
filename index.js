@@ -24,7 +24,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/settings', (req, res) => {
-  res.json({ mensaje: "¡Hola desde Render!" });
+  if (!req.user) return res.redirect('/auth');
+  res.json({ mensaje: "Hola desde Settings!", usuario: req.user });
 });
 
 app.listen(PORT, () => {
