@@ -8,7 +8,6 @@ router.get('/redirect', passport.authenticate('discord', {
     failureRedirect: '/forbidden' 
 }), (req, res) => {
   res.send(200);
-  res.redirect('https://dashboard-frontend-phi.vercel.app/settings');
 });
 
 module.exports = router;
